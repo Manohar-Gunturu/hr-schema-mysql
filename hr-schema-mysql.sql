@@ -22,7 +22,6 @@ CREATE TABLE regions (
 	);
 
 CREATE TABLE countries (
-	country_id CHAR(2) NOT NULL,
 	country_name VARCHAR(40),
 	region_id INT (11) UNSIGNED NOT NULL,
 	PRIMARY KEY (country_id)
@@ -56,19 +55,18 @@ CREATE TABLE jobs (
 	);
 
 CREATE TABLE employees (
-	employee_id INT (11) UNSIGNED NOT NULL,
+	employee_id INT (11),
 	first_name VARCHAR(20),
-	last_name VARCHAR(25) NOT NULL,
-	email VARCHAR(25) NOT NULL,
-	phone_number VARCHAR(20),
-	hire_date DATE NOT NULL,
-	job_id VARCHAR(10) NOT NULL,
-	salary DECIMAL(8, 2) NOT NULL,
-	commission_pct DECIMAL(2, 2),
-	manager_id INT (11) UNSIGNED,
-	department_id INT (11) UNSIGNED,
-	PRIMARY KEY (employee_id)
+	last_name VARCHAR(25),
+	email VARCHAR(25),
+	phone_number VARCHAR(20)
 	);
+
+INSERT INTO employees(employee_id, first_name, last_name, email, phone_number) 
+    VALUES(5, 'Jhon', 'Whyte', 'jhon@gmail.com','4388661899');
+
+
+
 
 CREATE TABLE job_history (
 	employee_id INT (11) UNSIGNED NOT NULL,
